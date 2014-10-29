@@ -1,0 +1,13 @@
+homepage:
+    pattern: /
+    defaults: { _controller:PhpPracticalTestWebBundle:Default:homepage}
+    requirements:
+        _method: GET|POST
+delete_product:
+    pattern: /delete_product/{id}
+    defaults: { _controller:PhpPracticalTestWebBundle:Default:deleteProduct}
+update_product:
+    pattern: /update_product/{id}
+    defaults: { _controller:PhpPracticalTestWebBundle:Default:updateProduct}
+    requirements:
+        _method: GET|POST

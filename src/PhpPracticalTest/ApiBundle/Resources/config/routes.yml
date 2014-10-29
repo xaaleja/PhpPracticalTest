@@ -1,0 +1,5 @@
+php_practical_test_api_Products:
+    type: rest
+    prefix: /v1
+    resource: "PhpPracticalTest\ApiBundle\Controller\\ProductsController"
+    name_prefix:  api_1_ # naming collision

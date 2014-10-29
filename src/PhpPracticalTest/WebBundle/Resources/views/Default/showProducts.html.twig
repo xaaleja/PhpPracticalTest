@@ -1,0 +1,40 @@
+{% extends '::frontend.html.twig' %}
+
+{% block body %}
+    <h1>Products</h1>
+    <div id="showProducts">
+        <ul>
+            <li><strong>Name</strong></li>
+            <li><strong>Price</strong></li>
+            <li><strong>Updated at</strong></li>
+            <br>
+        </ul>
+        {% for p in products %}
+            <ul>
+                <li>{{p.productName}}</li>
+                <li>{{p.productPrice}}</li>
+                <li>{{p.updatedAt | date("Y-m-d")}}</li>
+                <li><a href="{{ path('delete_product', {'id': p.id}) }}">Delete</a></li>
+                <li><a href="{{ path('update_product', {'id': p.id}) }}">Edit</a></li>
+                <br>
+            </ul>
+        {% endfor %}
+    </div>
+    <br>
+    <div id="formProducts">
+        <h2>Add a new product</h2>
+        <form action="{{ path('homepage') }}" method="post" {{ form_enctype(form) }} class="product-form">
+            {{ form_errors(form) }}
+
+            {{ form_row(form.productName) }}
+            {{ form_row(form.productPrice) }}
+            {{ form_row(form.category_id) }}
+
+            {{ form_rest(form) }}
+
+            <input id="submitNewProduct" type="submit" value="Submit" />
+        </form>
+    </div>
+{% endblock %}
+
+

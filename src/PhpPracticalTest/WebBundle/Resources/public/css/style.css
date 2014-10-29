@@ -1,0 +1,39 @@
+html, body {
+    font-family: Arial,Helvetica,sans-serif;
+    background: url("http://subtlepatterns.com/patterns/cloth_alike.png") repeat scroll 0% 0% transparent;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    float:left;
+    margin-right: 1em;
+}
+#showProducts li {
+    width:10%;
+}
+#formProducts {
+    margin-left: 3%;
+}
+#formProducts form {
+    margin-left: 2%;
+}
+#formProducts form label {
+    float:left;
+    width: 120px;
+}
+#submitNewProduct {
+    float:left;
+    margin-left: 196px;
+    margin-top: 10px;
+}
+#submitEdit {
+    float:left;
+    margin-left: 196px;
+    margin-top: 10px;
+}
+#homepageLink {
+    margin-top: 5%;
+}

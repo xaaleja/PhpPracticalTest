@@ -1,0 +1,10 @@
+php_practical_test_api:
+    type:     rest
+    prefix:   /api
+    resource: "@PhpPracticalTestApiBundle/Resources/config/routes.yml"
+php_practical_test_web:
+    resource: "@PhpPracticalTestWebBundle/Resources/config/routing.yml"
+    prefix:   /
+NelmioApiDocBundle:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:   /api/doc

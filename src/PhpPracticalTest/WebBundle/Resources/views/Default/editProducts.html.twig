@@ -1,0 +1,36 @@
+{% extends '::frontend.html.twig' %}
+
+{% block body %}
+    <h1>Product</h1>
+    <div id="showProducts">
+        <ul>
+            <li><strong>Name</strong></li>
+            <li><strong>Price</strong></li>
+            <li><strong>Updated at</strong></li>
+            <br>
+        </ul>
+        <ul>
+            <li>{{product.productName}}</li>
+            <li>{{product.productPrice}}</li>
+            <li>{{product.updatedAt | date("Y-m-d")}}</li>
+        </ul>
+    </div>
+    <br>
+    <br>
+    <div id="formProducts">
+        <h2>Edit</h2>
+        <form id="editForm" action="{{ path('update_product', {'id': product.id}) }}" method="post" {{ form_enctype(form) }} class="product-form">
+            {{ form_errors(form) }}
+            {{ form_row(form.productName) }}
+            {{ form_row(form.productPrice) }}
+            {{ form_row(form.category_id) }}
+            {{ form_rest(form) }}
+
+            <input id="submitEdit" type="submit" value="Submit" />
+        </form>
+    </div>
+    <div id="homepageLink">
+        <a href="{{ path('homepage') }}">Back to homepage</a>
+    </div>
+{% endblock %}
+

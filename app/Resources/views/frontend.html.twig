@@ -1,0 +1,12 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <header id="cabecera">
+    </header>
+    <div id="content">
+              {% block article %}{% endblock %}
+              {% block aside %}
+              {% endblock %}
+    </div>
+{% endblock %}
+
