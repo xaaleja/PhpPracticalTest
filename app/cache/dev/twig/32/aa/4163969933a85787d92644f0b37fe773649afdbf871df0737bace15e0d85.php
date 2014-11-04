@@ -23,69 +23,70 @@ class __TwigTemplate_32aa4163969933a85787d92644f0b37fe773649afdbf871df0737bace15
         echo "<!DOCTYPE html>
 <html>
     <head>
-    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />
-            <title>";
-        // line 5
+        <meta charset=\"UTF-8\" />
+        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1\">
+        <title>";
+        // line 6
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
         ";
-        // line 6
+        // line 7
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 11
+        // line 9
         echo "        <link rel=\"icon\" type=\"image/x-icon\" href=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("favicon.ico"), "html", null, true);
         echo "\" />
     </head>
     <body>
         ";
-        // line 14
+        // line 12
         $this->displayBlock('body', $context, $blocks);
-        // line 15
-        echo "        ";
-        $this->displayBlock('javascripts', $context, $blocks);
-        // line 18
+        // line 14
         echo "    </body>
-</html>
+    ";
+        // line 15
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 20
+        echo "</html>
 ";
     }
 
-    // line 5
+    // line 6
     public function block_title($context, array $blocks = array())
     {
         echo "Welcome!";
     }
 
-    // line 6
+    // line 7
     public function block_stylesheets($context, array $blocks = array())
     {
-        // line 7
-        echo "            <link href=\"";
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/phppracticaltestweb/css/style.css"), "html", null, true);
-        echo "\" rel=\"stylesheet\" type=\"text/css\" />
-            <link href=\"";
         // line 8
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/phppracticaltestweb/css/jquery-1.11.0.css"), "html", null, true);
-        echo "\" rel=\"stylesheet\" type=\"text/css\" />
-            <link href=\"";
-        // line 9
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/phppracticaltestweb/css/jquery-2.1.0.css"), "html", null, true);
-        echo "\" rel=\"stylesheet\" type=\"text/css\" />
-        ";
+        echo "        ";
     }
 
-    // line 14
+    // line 12
     public function block_body($context, array $blocks = array())
     {
+        // line 13
+        echo "        ";
     }
 
     // line 15
     public function block_javascripts($context, array $blocks = array())
     {
         // line 16
-        echo "            <script type=\"text/javascript\" src=\"";
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/phppracticaltestweb/js/scripts.js"), "html", null, true);
+        echo "        <script type=\"text/javascript\" src=\"";
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/phppracticaltestweb/js/jquery-1.11.0.js"), "html", null, true);
         echo "\"></script>
-        ";
+        <script type=\"text/javascript\" src=\"";
+        // line 17
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/phppracticaltestweb/js/jquery-2.1.0.js"), "html", null, true);
+        echo "\"></script>
+        <script type=\"text/javascript\" src=\"";
+        // line 18
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/phppracticaltestweb/js/jscripts.js"), "html", null, true);
+        echo "\"></script>
+    ";
     }
 
     public function getTemplateName()
@@ -100,6 +101,6 @@ class __TwigTemplate_32aa4163969933a85787d92644f0b37fe773649afdbf871df0737bace15
 
     public function getDebugInfo()
     {
-        return array (  85 => 16,  82 => 15,  77 => 14,  71 => 9,  67 => 8,  62 => 7,  59 => 6,  53 => 5,  47 => 18,  44 => 15,  42 => 14,  35 => 11,  33 => 6,  29 => 5,  23 => 1,);
+        return array (  87 => 18,  83 => 17,  78 => 16,  75 => 15,  71 => 13,  68 => 12,  64 => 8,  61 => 7,  55 => 6,  50 => 20,  48 => 15,  45 => 14,  43 => 12,  36 => 9,  34 => 7,  30 => 6,  23 => 1,);
     }
 }

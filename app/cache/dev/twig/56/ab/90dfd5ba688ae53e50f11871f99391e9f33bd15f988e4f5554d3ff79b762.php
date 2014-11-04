@@ -31,7 +31,7 @@ class __TwigTemplate_56ab90dfd5ba688ae53e50f11871f99391e9f33bd15f988e4f5554d3ff7
         echo "    <h1>Products</h1>
     <div id=\"showProducts\">
         <ul>
-            <li><strong>Name</strong></li>
+            <li id=\"formTitle\"><strong>Name</strong></li>
             <li><strong>Price</strong></li>
             <li><strong>Updated at</strong></li>
             <br>
@@ -75,9 +75,9 @@ class __TwigTemplate_56ab90dfd5ba688ae53e50f11871f99391e9f33bd15f988e4f5554d3ff7
     <br>
     <div id=\"formProducts\">
         <h2>Add a new product</h2>
-        <form action=\"";
+        <form id=\"newForm\" action=\"";
         // line 26
-        echo $this->env->getExtension('routing')->getPath("homepage");
+        echo $this->env->getExtension('routing')->getPath("add_product");
         echo "\" method=\"post\" ";
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'enctype');
         echo " class=\"product-form\">
@@ -107,6 +107,7 @@ class __TwigTemplate_56ab90dfd5ba688ae53e50f11871f99391e9f33bd15f988e4f5554d3ff7
             <input id=\"submitNewProduct\" type=\"submit\" value=\"Submit\" />
         </form>
     </div>
+    <div id=\"output\"></div>
 ";
     }
 

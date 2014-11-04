@@ -1,0 +1,6 @@
+$(document).ready(function() {
+      $(".formTitle").on("click", function(){
+        console.log($(this));
+        $(this).hide();
+        });
+});

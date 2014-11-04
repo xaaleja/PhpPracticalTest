@@ -211,20 +211,34 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
         not_update_product:
 
-        // nelmio_api_doc_index
-        if (rtrim($pathinfo, '/') === '/api/doc') {
-            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                $allow = array_merge($allow, array('GET', 'HEAD'));
-                goto not_nelmio_api_doc_index;
-            }
+        if (0 === strpos($pathinfo, '/a')) {
+            // add_product
+            if ($pathinfo === '/add_product') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_add_product;
+                }
 
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'nelmio_api_doc_index');
+                return array (  '_controller' => 'PhpPracticalTest\\WebBundle\\Controller\\DefaultController::addProductAction',  '_route' => 'add_product',);
             }
+            not_add_product:
 
-            return array (  '_controller' => 'Nelmio\\ApiDocBundle\\Controller\\ApiDocController::indexAction',  '_route' => 'nelmio_api_doc_index',);
+            // nelmio_api_doc_index
+            if (rtrim($pathinfo, '/') === '/api/doc') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_nelmio_api_doc_index;
+                }
+
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'nelmio_api_doc_index');
+                }
+
+                return array (  '_controller' => 'Nelmio\\ApiDocBundle\\Controller\\ApiDocController::indexAction',  '_route' => 'nelmio_api_doc_index',);
+            }
+            not_nelmio_api_doc_index:
+
         }
-        not_nelmio_api_doc_index:
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }

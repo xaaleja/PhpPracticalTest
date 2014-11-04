@@ -28,6 +28,8 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    globals:
+        js_direktorioa: '/bundles/phppracticaltestweb/js/'
 
 # Assetic Configuration
 assetic:

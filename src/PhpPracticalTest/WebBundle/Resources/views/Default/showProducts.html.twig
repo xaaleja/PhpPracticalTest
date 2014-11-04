@@ -4,7 +4,7 @@
     <h1>Products</h1>
     <div id="showProducts">
         <ul>
-            <li><strong>Name</strong></li>
+            <li id="formTitle"><strong>Name</strong></li>
             <li><strong>Price</strong></li>
             <li><strong>Updated at</strong></li>
             <br>
@@ -23,7 +23,7 @@
     <br>
     <div id="formProducts">
         <h2>Add a new product</h2>
-        <form action="{{ path('homepage') }}" method="post" {{ form_enctype(form) }} class="product-form">
+        <form id="newForm" action="{{ path('add_product') }}" method="post" {{ form_enctype(form) }} class="product-form">
             {{ form_errors(form) }}
 
             {{ form_row(form.productName) }}
@@ -35,6 +35,7 @@
             <input id="submitNewProduct" type="submit" value="Submit" />
         </form>
     </div>
+    <div id="output"></div>
 {% endblock %}
 
 

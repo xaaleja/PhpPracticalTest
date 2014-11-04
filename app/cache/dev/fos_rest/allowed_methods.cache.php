@@ -33,6 +33,10 @@
     0 => 'GET',
     1 => 'POST',
   ),
+  'add_product' => 
+  array (
+    0 => 'POST',
+  ),
   'nelmio_api_doc_index' => 
   array (
     0 => 'GET',

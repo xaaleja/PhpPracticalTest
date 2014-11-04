@@ -11,3 +11,8 @@ update_product:
     defaults: { _controller:PhpPracticalTestWebBundle:Default:updateProduct}
     requirements:
         _method: GET|POST
+add_product:
+    pattern: /add_product
+    defaults: { _controller:PhpPracticalTestWebBundle:Default:addProduct }
+    requirements:
+        _method: POST

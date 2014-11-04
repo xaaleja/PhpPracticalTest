@@ -1,5 +1,9 @@
 {% extends '::base.html.twig' %}
 
+{% block stylesheets %}
+    <link href="{{ asset('bundles/phppracticaltestweb/css/style.css') }}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
 {% block body %}
     <header id="cabecera">
     </header>
@@ -9,4 +13,5 @@
               {% endblock %}
     </div>
 {% endblock %}
+
 

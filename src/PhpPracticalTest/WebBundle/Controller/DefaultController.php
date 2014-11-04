@@ -18,7 +18,7 @@ class DefaultController extends Controller
     {
         $product = new Products();
         $form = $this->createForm(new ProductsType(), $product);
-
+        /*
         $request = $this->getRequest();
         if ($request->getMethod() == 'POST') {
             $form->bind($request);
@@ -29,7 +29,7 @@ class DefaultController extends Controller
                 $em->persist($product);
                 $em->flush();
             }
-        }
+        }*/
 
         $em = $this->getDoctrine()->getManager();
         $products =$em->getRepository('PhpPracticalTestApiBundle:Products')->findAll();
@@ -73,6 +73,32 @@ class DefaultController extends Controller
 
         return $this->render('PhpPracticalTestWebBundle:Default:editProducts.html.twig', array('product' => $product,
             'form' => $form->createView()));
+    }
+
+    public function addProductAction()
+    {
+        //if(!$this->getRequest()->isXmlHttpRequest())
+          //  throw $this->createNotFoundException('No existe la página a la que desea acceder');
+
+        $product = new Products();
+        $form = $this->createForm(new ProductsType(), $product);
+
+        $request = $this->getRequest();
+        if ($request->getMethod() == 'POST') {
+            $form->bind($request);
+
+            if ($form->isValid()) {
+                $product->setUpdatedAt(new \DateTime('now'));
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($product);
+                $em->flush();
+
+                $return=array("responseCode"=>200);
+                $return=json_encode($return);//jscon encode the array
+                return new Response($return,200,array('Content-Type'=>'application/json'));
+            }
+        }
+
     }
 
 }
