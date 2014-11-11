@@ -10,11 +10,16 @@
             <br>
         </ul>
         {% for p in products %}
-            <ul>
+            <ul id="product{{p.id}}">
                 <li>{{p.productName}}</li>
                 <li>{{p.productPrice}}</li>
                 <li>{{p.updatedAt | date("Y-m-d")}}</li>
-                <li><a href="{{ path('delete_product', {'id': p.id}) }}">Delete</a></li>
+                <li class="deleteLink">
+                    <form id="deleteForm{{p.id}}" action="{{ path('delete_product', {'id': p.id}) }}" method="post" {{ form_enctype(formDelete) }} class="delete-form">
+                        <input type="submit" id="option" value="Delete" />
+                        <input type="hidden" id="idProduct" value="{{ p.id }}" />
+                    </form>
+                </li>
                 <li><a href="{{ path('update_product', {'id': p.id}) }}">Edit</a></li>
                 <br>
             </ul>

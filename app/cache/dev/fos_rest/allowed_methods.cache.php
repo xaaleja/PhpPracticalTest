@@ -28,6 +28,10 @@
     0 => 'GET',
     1 => 'POST',
   ),
+  'delete_product' => 
+  array (
+    0 => 'POST',
+  ),
   'update_product' => 
   array (
     0 => 'GET',

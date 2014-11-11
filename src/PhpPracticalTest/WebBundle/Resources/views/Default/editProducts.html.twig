@@ -9,17 +9,17 @@
             <li><strong>Updated at</strong></li>
             <br>
         </ul>
-        <ul>
-            <li>{{product.productName}}</li>
-            <li>{{product.productPrice}}</li>
-            <li>{{product.updatedAt | date("Y-m-d")}}</li>
+        <ul id="editList">
+            <li id="liName">{{product.productName}}</li>
+            <li id="liPrice">{{product.productPrice}}</li>
+            <li id="liDate">{{product.updatedAt | date("Y-m-d")}}</li>
         </ul>
     </div>
     <br>
     <br>
     <div id="formProducts">
         <h2>Edit</h2>
-        <form id="editForm" action="{{ path('update_product', {'id': product.id}) }}" method="post" {{ form_enctype(form) }} class="product-form">
+        <form id="editForm" action="{{ path('update_product', {'id': product.id}) }}" method="post" {{ form_enctype(form) }} class="edit-product-form">
             {{ form_errors(form) }}
             {{ form_row(form.productName) }}
             {{ form_row(form.productPrice) }}

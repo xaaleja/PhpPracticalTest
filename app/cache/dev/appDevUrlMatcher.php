@@ -197,8 +197,14 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         // delete_product
         if (0 === strpos($pathinfo, '/delete_product') && preg_match('#^/delete_product/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            if ($this->context->getMethod() != 'POST') {
+                $allow[] = 'POST';
+                goto not_delete_product;
+            }
+
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'delete_product')), array (  '_controller' => 'PhpPracticalTest\\WebBundle\\Controller\\DefaultController::deleteProductAction',));
         }
+        not_delete_product:
 
         // update_product
         if (0 === strpos($pathinfo, '/update_product') && preg_match('#^/update_product/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {

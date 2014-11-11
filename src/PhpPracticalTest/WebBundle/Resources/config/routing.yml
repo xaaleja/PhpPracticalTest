@@ -6,6 +6,8 @@ homepage:
 delete_product:
     pattern: /delete_product/{id}
     defaults: { _controller:PhpPracticalTestWebBundle:Default:deleteProduct}
+    requirements:
+        _method: POST
 update_product:
     pattern: /update_product/{id}
     defaults: { _controller:PhpPracticalTestWebBundle:Default:updateProduct}

@@ -36,16 +36,16 @@ class __TwigTemplate_05dd7e8186d341a7ca043c25508b347210363d9495abb799692205cca37
             <li><strong>Updated at</strong></li>
             <br>
         </ul>
-        <ul>
-            <li>";
+        <ul id=\"editList\">
+            <li id=\"liName\">";
         // line 13
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : $this->getContext($context, "product")), "productName", array()), "html", null, true);
         echo "</li>
-            <li>";
+            <li id=\"liPrice\">";
         // line 14
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : $this->getContext($context, "product")), "productPrice", array()), "html", null, true);
         echo "</li>
-            <li>";
+            <li id=\"liDate\">";
         // line 15
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["product"]) ? $context["product"] : $this->getContext($context, "product")), "updatedAt", array()), "Y-m-d"), "html", null, true);
         echo "</li>
@@ -60,7 +60,7 @@ class __TwigTemplate_05dd7e8186d341a7ca043c25508b347210363d9495abb799692205cca37
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("update_product", array("id" => $this->getAttribute((isset($context["product"]) ? $context["product"] : $this->getContext($context, "product")), "id", array()))), "html", null, true);
         echo "\" method=\"post\" ";
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'enctype');
-        echo " class=\"product-form\">
+        echo " class=\"edit-product-form\">
             ";
         // line 23
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'errors');
